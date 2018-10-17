@@ -1,0 +1,27 @@
+{
+  "name": "lab-04",
+  "version": "1.0.0",
+  "description": "![CF](http://i.imgur.com/7v5ASc8.png) LAB: Buffers - Bitmap Transformer =======================================================================",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevinoh47/lab-04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevinoh47/lab-04/issues"
+  },
+  "homepage": "https://github.com/Kevinoh47/lab-04#readme",
+  "dependencies": {
+    "eslint": "^5.7.0",
+    "fs": "0.0.1-security",
+    "jest": "^23.6.0"
+  }
+}
