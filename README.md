@@ -1,5 +1,9 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB: Buffers - Bitmap Transformer
 =======================================================================
+## Travis
+[![Build Status](https://travis-ci.com/Kevinoh47/lab-04.svg?branch=working04)](https://travis-ci.com/Kevinoh47/lab-04)
+
+https://travis-ci.com/Kevinoh47/lab-04
 
 ## Submission Instructions
 * Follow the core submission instructions
