@@ -59,6 +59,7 @@ console.log('first byte of pixel array:', parsedBitmap.startOfPixelArray);
 console.log('count of color planes:' , parsedBitmap.numberOfColorPlanes);
 console.log('number of colors in palette:', parsedBitmap.numberOfColorsInPalette);
 console.log('numberOfBytesInDIBHeader:', parsedBitmap.numberOfBytesInDIBheader);
+
 /**
  * Parser -- accepts a buffer and will parse through it, according to the specification, creating object properties for each segment of the file
  * @param buffer
