@@ -65,30 +65,36 @@ console.log('numberOfBytesInDIBHeader:', parsedBitmap.numberOfBytesInDIBheader);
  */
 //Question: why is Bitmap capitalized here? this isn't a constructor?
 Bitmap.prototype.parse = function(buffer) {
-  console.log('inside parser...');
-  this.type = buffer.toString('utf-8', 0, 2); //why is this the file path here but correct above???
-  console.log('this type: ', this.type);
-
-  console.log('Bitmap Type', Bitmap.type);
+  this.type = buffer.toString('utf-8', 0, 2); 
   //... and so on
-  // this.fileSize = buffer.readInt32LE(2);
-  // this.bytesPerPixel = buffer.readInt16LE(28);
-  // this.height = buffer.readInt32LE(22);
-  // this.width = buffer.readInt32LE(18);
+  this.fileSize = buffer.readInt32LE(2);
+  this.bitsPerPixel = buffer.readInt16LE(28);
+  this.height = buffer.readInt32LE(22);
+  this.width = buffer.readInt32LE(18);
+
+  // console.log('this type: ', this.type);
+  // console.log('this height: ', this.height);
+  // console.log('this width: ', this.width);
+  // console.log('this bitsPerPixel: ', this.bitsPerPixel);
+  // console.log('this fileSize: ', this.fileSize);
 };
 
 // TODO figure out how to call this parse method. Nothing i have tried has worked. either parse is said not to be a function, or the buffer is said to be undefined... 
-// console.log('myBmp parsed using bmpBuffer... ', myBmp.parse(fs.readFileSync(`${__dirname}/assets/baldy.bmp`)));
-
 //let myBitmapObject = Bitmap.call.parse(fs.readFileSync(`${__dirname}/assets/baldy.bmp`));
 //let myBitmapObject = myBmp.parse(fs.readFileSync(bmpBuffer));
-let myBitmapObject = myBmp.parse(`${__dirname}/assets/baldy.bmp`);
+//let myBitmapObject = myBmp.parse(fs.readFileSync(`${__dirname}/assets/baldy.bmp`));
+let myBitmapObject = myBmp.parse(bmpBuffer);
 
-for (var key in myBitmapObject) {
-  console.log(key, myBitmapObject[key]);
-}
+const myObjectProps = (bitmp) => {
+  console.log('inside myObjProps: ', bitmp);
+  for (var key in bitmp) {
 
+    console.log(key, bitmp[key]);
+  }
+};
 
+myObjectProps(myBmp);
+myObjectProps(myBitmapObject);
 /**
  * Transform a bitmap using some set of rules. The operation points to some function, which will operate on a bitmap instance
  * @param operation
